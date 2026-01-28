@@ -1,10 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Configuração inserida a partir do print enviado
-const SUPABASE_URL = 'https://urnipmzmnkqrshkfpwgk.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_LHPRY8QD-0oDAR8ql6rLgw_nUvCeFpS';
+// Utiliza as variáveis de ambiente injetadas pelo Vite
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
 
-// Inicializa o cliente Supabase
+// Inicializa o cliente Supabase somente se as variáveis estiverem presentes
 export const supabase = (SUPABASE_URL && SUPABASE_ANON_KEY) 
   ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) 
   : null;
