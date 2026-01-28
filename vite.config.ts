@@ -7,6 +7,9 @@ export default defineConfig(({ mode }) => {
   
   return {
     plugins: [react()],
+    build: {
+      chunkSizeWarningLimit: 1600,
+    },
     define: {
       // Define as variáveis globalmente para evitar erros de 'process is not defined' no navegador
       'process.env.API_KEY': JSON.stringify(env.API_KEY || ''),
