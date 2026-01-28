@@ -1,0 +1,5 @@
+{
+  "name": "Gerenciador de Gastos",
+  "description": "Uma aplicação completa para controle financeiro pessoal, permitindo o gerenciamento de receitas, despesas, categorias e subcategorias, com insights gerados por IA.",
+  "requestFramePermissions": []
+}
