@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Plus, Wallet, FileText, PieChart, Settings, Search, Bell, Pencil, Trash2, LogOut, Cloud, CloudOff } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import DashboardCards from './components/DashboardCards';
 import AddTransactionForm from './components/AddTransactionForm';
 import CategoryManager from './components/CategoryManager';
@@ -433,11 +434,21 @@ function App() {
 
   // If no user is logged in, show login screen
   if (!user) {
-    return <LoginScreen onLogin={handleLogin} />;
+    return (
+      <>
+        <LoginScreen onLogin={handleLogin} />
+        <SpeedInsights />
+      </>
+    );
   }
 
   // If user is logged in, show Dashboard
-  return <Dashboard key={user} user={user} onLogout={handleLogout} />;
+  return (
+    <>
+      <Dashboard key={user} user={user} onLogout={handleLogout} />
+      <SpeedInsights />
+    </>
+  );
 }
 
 export default App;
